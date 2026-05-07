@@ -85,7 +85,8 @@ def build_scheduler(optimizer, n_steps: int, warmup: int):
 
 def train_epoch(model, loader, optimizer, scheduler, device, config, epoch):
     model.train()
-    tok       = model.decoder.tokenizer
+    actual    = model.module if hasattr(model, "module") else model
+    tok       = actual.decoder.tokenizer
     acc       = config.training.gradient_accumulation_steps
     total     = 0.0
     optimizer.zero_grad()
@@ -119,7 +120,8 @@ def train_epoch(model, loader, optimizer, scheduler, device, config, epoch):
 
 def val_epoch(model, loader, device, config, epoch):
     model.eval()
-    tok   = model.decoder.tokenizer
+    actual = model.module if hasattr(model, "module") else model
+    tok    = actual.decoder.tokenizer
     total = 0.0
     with torch.no_grad():
         for batch in tqdm(loader, desc=f"Ep {epoch+1} val"):

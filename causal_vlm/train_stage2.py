@@ -134,7 +134,8 @@ def _num_events(batch: dict) -> List[int]:
 
 def train_epoch(model, loader, opt, sched, device, config, epoch):
     model.train()
-    tok       = model.stage1.decoder.tokenizer
+    actual    = model.module if hasattr(model, "module") else model
+    tok       = actual.stage1.decoder.tokenizer
     total     = cap_t = caus_t = 0.0
     opt.zero_grad()
 
@@ -199,7 +200,8 @@ def train_epoch(model, loader, opt, sched, device, config, epoch):
 
 def val_epoch(model, loader, device, config, epoch):
     model.eval()
-    tok        = model.stage1.decoder.tokenizer
+    actual     = model.module if hasattr(model, "module") else model
+    tok        = actual.stage1.decoder.tokenizer
     all_p, all_g, total = [], [], 0.0
 
     with torch.no_grad():

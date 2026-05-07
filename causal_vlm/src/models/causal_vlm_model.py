@@ -169,7 +169,8 @@ class CausalVLM(nn.Module):
 
         caption_loss = None
         if labels is not None:
-            caption_loss = self.stage1(frames, labels=labels).loss
+            # Reuse the already-computed visual_features to avoid a second encoder pass.
+            caption_loss = self.stage1.decoder(visual_features, labels=labels).loss
 
         adjacency_matrix = sizes = None
         if event_descriptions is not None and num_events is not None:
