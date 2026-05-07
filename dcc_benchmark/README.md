@@ -350,13 +350,3 @@ paper and are implemented verbatim in:
 
 ---
 
-## Citation
-
-```bibtex
-@inproceedings{causalvlm2026,
-  title     = {Causal-{VLM}: Dense Causal Captioning in Videos},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2026},
-  note      = {Evaluations \& Datasets Track},
-}
-```
