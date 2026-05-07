@@ -1,0 +1,24 @@
+# Core
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.40.0
+tqdm
+
+# Step 1 -- LLM annotation
+# (Llama-3.3-70B loaded via transformers pipeline; no extra package needed)
+
+# Step 2 -- EMScore validation
+emscore
+
+# Step 3 -- VLM+LLM validation
+Pillow
+opencv-python       # frame sampling from merged clips
+
+# Step 4 -- Human study scoring
+# scipy is optional: required only for the ICC 95 % confidence interval
+scipy               # optional
+
+# Video segment extraction (all steps)
+# ffmpeg must be installed system-wide (not a Python package):
+#   Ubuntu/Debian:  sudo apt install ffmpeg
+#   macOS:          brew install ffmpeg
