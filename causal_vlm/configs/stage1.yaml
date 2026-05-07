@@ -1,0 +1,24 @@
+model:
+  encoder:
+    hidden_size: null           # set at runtime from Perception-LM-3B vision tower
+  decoder:
+    model_name: "meta-llama/Llama-3.1-3B-Instruct"
+    use_lora:   true
+    lora_rank:  16
+    lora_alpha: 32
+    max_length: 256
+
+data:
+  dataset_path:       "/path/to/dcc_dataset"
+  batch_size:         16
+  num_workers:        4
+  max_caption_length: 512
+
+training:
+  gradient_accumulation_steps: 1
+  clip_grad_norm:              1.0
+  save_dir:                    "checkpoints/stage1"
+  resume:                      null
+
+logging:
+  project_name: "causal-vlm"

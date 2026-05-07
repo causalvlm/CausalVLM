@@ -1,0 +1,9 @@
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.40.0
+peft>=0.10.0
+omegaconf>=2.3.0
+wandb
+tqdm
+Pillow
+opencv-python
