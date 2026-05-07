@@ -4,7 +4,6 @@ This repository contains the annotation and validation pipeline for the
 **Dense Causal Captions (DCC)** benchmark introduced in the paper:
 
 > **Causal-VLM: Dense Causal Captioning in Videos**
-> NeurIPS 2026, Evaluations & Datasets Track
 
 DCC is the first large-scale benchmark for dense causal captioning, comprising
 **21,586 videos** and **85,187 events** across ActivityNet Captions and YouCook2,
