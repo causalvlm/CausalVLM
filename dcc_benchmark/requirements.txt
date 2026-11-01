@@ -1,0 +1,14 @@
+torch>=2.2
+torchvision>=0.17
+transformers==4.55.4
+accelerate>=1.0
+timm>=1.0
+einops
+sentencepiece
+Pillow>=9.1
+opencv-python
+tqdm
+openai-clip==1.0.1
+# ffmpeg must be on PATH.
+# Add pinned upstream EMScore to PYTHONPATH as described in README.md.
+# flash-attn is optional; enable it explicitly with --flash-attention.

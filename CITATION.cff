@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: 'Please cite the Causal-VLM paper when using this code or the DCC benchmark.'
+title: 'Causal-VLM: Dense Causal Captioning in Videos'
+type: software
+repository-code: 'https://github.com/causalvlm/CausalVLM'
+authors:
+  - family-names: Nadeem
+    given-names: Asmar
+  - family-names: Awan
+    given-names: Mahrukh
+  - family-names: Awais
+    given-names: Muhammad
+  - family-names: Dawes
+    given-names: Robert
+  - family-names: Hilton
+    given-names: Adrian
+  - family-names: Mustafa
+    given-names: Armin
+preferred-citation:
+  type: conference-paper
+  title: 'Causal-VLM: Dense Causal Captioning in Videos'
+  authors:
+    - family-names: Nadeem
+      given-names: Asmar
+    - family-names: Awan
+      given-names: Mahrukh
+    - family-names: Awais
+      given-names: Muhammad
+    - family-names: Dawes
+      given-names: Robert
+    - family-names: Hilton
+      given-names: Adrian
+    - family-names: Mustafa
+      given-names: Armin
+  collection-title: Advances in Neural Information Processing Systems
+  year: 2026

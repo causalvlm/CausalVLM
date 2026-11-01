@@ -1,0 +1,44 @@
+model:
+  encoder:
+    model_name: vit_pe_lang_large_patch14_448.fb
+    loader: timm
+    hidden_size: null  # inferred from the loaded encoder
+    num_prefix_tokens: 1  # discard CLS; retain the square spatial patch grid
+    frame_batch_size: 8
+    mean: [0.5, 0.5, 0.5]
+    std: [0.5, 0.5, 0.5]
+  projector:
+    pooling_ratio: 4  # must match the Stage 1 checkpoint
+    initializer_range: 0.02  # constructor only; Stage 2 restores the trained projector
+  decoder:
+    model_name: meta-llama/Llama-3.2-3B-Instruct
+    use_lora: false
+    max_length: 512
+    prompt_before_video: 'USER: '
+    prompt_after_video: ' Describe the events in this video with timestamps. ASSISTANT:'
+  causal_head:
+    hidden_dim: 512
+    n_heads: 8
+    layers: 2
+    ffn_dim: 1024
+    event_pooling: timestamp
+    text_encoding: contextual
+    text_batch_size: 8
+    text_max_length: 64
+data:
+  dataset_path: null
+  resolution: 448
+  num_frames: 64
+  batch_size: 16  # global across ranks, before accumulation
+  num_workers: 4
+  max_caption_length: 512
+training:
+  seed: 42
+  gradient_accumulation_steps: 4
+  gradient_checkpointing: true
+  clip_grad_norm: 1.0
+  save_dir: checkpoints/stage2
+loss:
+  causal_weight: 2.0
+  hard_negative_ratio: 0.2
+  false_negative_weight: 10.0

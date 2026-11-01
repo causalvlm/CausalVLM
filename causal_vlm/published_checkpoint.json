@@ -1,0 +1,51 @@
+{
+  "repo_id": "causalvlm/CausalVLM",
+  "revision": "c80765ed6d74fae51b735dd7334a82597a84f359",
+  "files": {
+    "chat_template.jinja": {
+      "size": 1072,
+      "algorithm": "git-blob-sha1",
+      "hash": "4425d67449e99ef3d4c2cb76aceceacd349890b3"
+    },
+    "config.json": {
+      "size": 2278,
+      "algorithm": "git-blob-sha1",
+      "hash": "21532aaa687fb6d252b390618d1d284e19f136ec"
+    },
+    "generation_config.json": {
+      "size": 113,
+      "algorithm": "git-blob-sha1",
+      "hash": "14364bcd02915bad4dd51c9fd5a7c11d745bf2e9"
+    },
+    "model.safetensors": {
+      "size": 7051715002,
+      "algorithm": "sha256",
+      "hash": "6e9b0caec931d5f77c53a506b893e2bbdbe50a0e3688cc7d1a344c72fe7dcf94"
+    },
+    "modeling_causalvlm.py": {
+      "size": 7497,
+      "algorithm": "git-blob-sha1",
+      "hash": "704f9e75e5b695c38c2afda1f33585242df4276b"
+    },
+    "special_tokens_map.json": {
+      "size": 162,
+      "algorithm": "git-blob-sha1",
+      "hash": "7bd617e07daf15685a23e54c6249f959a271044c"
+    },
+    "tokenizer.json": {
+      "size": 17209923,
+      "algorithm": "sha256",
+      "hash": "ab0d969ef8cfbf1d640debe30a97c3fb11caf9b24b75fa89fbd4e9df1d51cac6"
+    },
+    "tokenizer_config.json": {
+      "size": 50722,
+      "algorithm": "git-blob-sha1",
+      "hash": "b78189aa3620a44c10902ebfbf1d890c17bd194a"
+    },
+    "video_preprocessor_config.json": {
+      "size": 595,
+      "algorithm": "git-blob-sha1",
+      "hash": "8f29beb7351e8882278cfea517880bdb86a7c8bd"
+    }
+  }
+}
